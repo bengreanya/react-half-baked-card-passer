@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useGameContext } from '../context/GameContext.js';
 
 const suitMap = {
@@ -8,8 +8,9 @@ const suitMap = {
   diamonds: '♦️',
 };
 
-export default function Card({ card, setFrom, player }) {
+export default function Card({ card, player }) {
   const { selectedCard, setSelectedCard } = useGameContext();
+  const { from, setFrom } = useGameContext();
   function handleCardClick() {
     setFrom(player);
     setSelectedCard(card);
